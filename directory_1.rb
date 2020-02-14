@@ -23,8 +23,9 @@ def print_header
 end
 
 def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  students.each_with_index do |student, index|
+    indexplusone = index + 1
+    puts "#{indexplusone}. #{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
 def print_footer(students)
@@ -34,4 +35,4 @@ end
 students = input_students
 print_header
 print_footer(students)
-print students.each_with_index
+print students
